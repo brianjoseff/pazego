@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @thing.photo.url %>
+
+<p>
+  <b>Name:</b>
+  <%= @thing.name %>
+</p>
+
+<p>
+  <b>Categories:</b>
+  <%= @thing.categories %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @thing.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @thing.price %>
+</p>
+
+<p>
+  <b>Borrow:</b>
+  <%= @thing.borrow %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @thing.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_thing_path(@thing) %> |
+<%= link_to 'Back', things_path %>
