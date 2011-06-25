@@ -10,6 +10,12 @@
   <%= @user.email %>
 </p>
 
+<% if @user.things.any? %>
+    <table class="things" summary="User things">
+      <%= render @things %>
+    </table>
+    <%= will_paginate @things %>
+  <% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
