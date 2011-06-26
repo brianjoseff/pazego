@@ -1,0 +1,10 @@
+<tr>
+  <td class="thing">
+    <span class="image"><%= image_tag thing.photo.url %></span>
+	<span class="name"><%= thing.name %></span><br />
+	<span class="price">$<%= thing.price %></span><br />
+	<span class="description"><%= thing.description %></span><br />    	<span class="timestamp">
+      Posted <%= time_ago_in_words(thing.created_at) %> ago.
+    </span>
+  </td>
+</tr>

@@ -25,7 +25,8 @@ class ThingsController < ApplicationController
   # GET /things/new.xml
   def new
     @thing = Thing.new
-
+    @title = "Upload thing"
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @thing }
@@ -40,8 +41,9 @@ class ThingsController < ApplicationController
   # POST /things
   # POST /things.xml
   def create
-    @thing = Thing.new(params[:thing])
-
+    @thing = current_user.things.build(params[:thing])
+    
+    
     respond_to do |format|
       if @thing.save
         format.html { redirect_to(@thing, :notice => 'Thing was successfully created.') }

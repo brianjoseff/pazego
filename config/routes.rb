@@ -8,6 +8,8 @@ Pazego::Application.routes.draw do
   match '/signout', :to => 'sessions#destroy'
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
+  
+  match '/newthing', :to => 'things#new'
 
 	root :to => 'pages#home'
 

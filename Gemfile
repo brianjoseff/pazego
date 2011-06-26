@@ -8,6 +8,8 @@ gem 'rails', '3.0.4'
 gem 'sqlite3', '1.3.3'
 gem 'will_paginate', '3.0.pre2'
 gem "paperclip", "~> 2.3"
+gem 'jquery-rails'
+gem 'client_side_validations'
 
 group :development do
   gem 'rspec-rails', '2.6.1'

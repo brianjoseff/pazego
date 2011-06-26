@@ -10,6 +10,9 @@ class CreateThings < ActiveRecord::Migration
 
       t.timestamps
     end
+    
+    add_index :things, :user_id
+    add_index :things, :created_at
   end
 
   def self.down

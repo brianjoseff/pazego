@@ -1,9 +1,9 @@
 .container {
-  width: 710px;
+  width: 800px;
 }
 
 body {
-  background: #cff;
+  background: #a6a6a6;
 }
 
 header {
@@ -80,6 +80,7 @@ nav ul li a:hover {
 a.signup_button {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 2em;
   display: block;
   text-align: center;
   width: 190px;
@@ -103,7 +104,7 @@ a.signup_button {
 footer {
   text-align: center;
   margin-top: 10px;
-  width: 710px;
+  width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -142,16 +143,17 @@ div.field, div.actions {
 
 /*  Error messages */
 
-.field_with_errors {
+/*.field_with_errors {
   margin-top: 10px;
   padding: 2px;
-  background-color: red;
   display: table;
 }
+
 
 .field_with_errors label {
   color: #fff;
 }
+*/
 
 #error_explanation {
   width: 400px;
@@ -247,3 +249,39 @@ form.new_micropost textarea {
   height: 4em;
   margin-bottom: 0;
 }
+
+/* error message styling */
+
+.field_with_errors {
+	display: inline;
+}
+
+.field_with_errors .message {
+	color: #D00;
+	padding-left: 5px;
+	font-size: 12px;
+}
+
+/* thing listing on user page */
+
+.thing {
+}
+
+.image {
+	float: left;	
+}
+
+.name, .price, .description {
+	margin-left: 5px;
+}
+
+.name {
+	font-size: 1.25em;
+	font-weight: bold;
+}
+
+/*.description {
+	border-top-style: solid;
+	border-width: 2px;
+}
+*/
