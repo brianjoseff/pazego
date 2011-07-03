@@ -19,11 +19,13 @@
 #
 
 class Thing < ActiveRecord::Base
-  belongs_to :user, :dependent => :destroy
+  belongs_to :user
+  belongs_to :category
   attr_accessible :name, :categories, :description, :price, :borrow, :created_at, :id
   attr_accessible :photo, :photo_file_name, :photo_content_type, :photo_file_size,  :photo_updated_at
   
-  has_attached_file :photo
+  has_attached_file :photo, :styles => { :thumb => "100x100",
+                                         :small => "200x200" }
   
   validates_attachment_size :photo, :less_than => 5.megabytes
   validates :name, :presence => true, :length => { :maximum => 140 }

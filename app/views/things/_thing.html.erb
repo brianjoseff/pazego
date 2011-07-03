@@ -1,10 +1,20 @@
 <tr>
   <td class="thing">
-    <span class="image"><%= image_tag thing.photo.url %></span>
-	<span class="name"><%= thing.name %></span><br />
+    <span class="image"><%= image_tag thing.photo.url(:thumb) %></span>
+	<span class="name"><%= link_to thing.name %></span><br />
 	<span class="price">$<%= thing.price %></span><br />
-	<span class="description"><%= thing.description %></span><br />    	<span class="timestamp">
+	<span class="description"><%= thing.description %></span><br />
+	<span class="timestamp">
       Posted <%= time_ago_in_words(thing.created_at) %> ago.
-    </span>
+    </span><br />
+	<% user = thing.user rescue User.find(thing.user_id) %>
+	<% if current_user?(user) %>	
+		<span class="edit-delete">
+			<%= link_to "Edit", edit_thing_path(thing) %> |
+			<%= link_to "Destroy", thing, :confirm => 'Are you sure?',
+										  :method => :delete,
+										  :title => thing %>
+		</span>
+	<% end %>
   </td>
 </tr>

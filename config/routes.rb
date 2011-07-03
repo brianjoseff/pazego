@@ -1,4 +1,9 @@
 Pazego::Application.routes.draw do
+  get "memberships/create"
+  get "memberships/destroy"
+  resources :memberships
+  resources :groups
+
   resources :things
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]

@@ -271,7 +271,7 @@ form.new_micropost textarea {
 	float: left;	
 }
 
-.name, .price, .description {
+.name, .price, .description, .timestamp, .edit-delete {
 	margin-left: 5px;
 }
 

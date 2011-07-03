@@ -13,7 +13,7 @@ class ThingsController < ApplicationController
   # GET /things/1
   # GET /things/1.xml
   def show
-    @thing = Thing.find(params[:id])
+    @thing = current_user.things.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

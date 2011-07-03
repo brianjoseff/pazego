@@ -108,7 +108,7 @@ DEPENDENCIES
   client_side_validations
   factory_girl_rails (= 1.0.1)
   faker (= 0.9.5)
-  jquery-rails
+  jquery-rails (~> 1.0.12)
   paperclip (~> 2.3)
   rails (= 3.0.4)
   rspec-rails (= 2.6.1)

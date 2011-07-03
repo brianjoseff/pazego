@@ -18,16 +18,17 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :categories %><br />
-    <%= f.text_field :categories %>
+    <%= f.label :price %><br />
+    $<%= f.text_field :price %>
+  </div>
+  <div class="field">
+	<%= f.label :category %><br />
+	<%= f.collection_select :id, Category.all, :id, :name %>
+    
   </div>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
   </div>
   <div class="field">
     <%= f.label :borrow %><br />

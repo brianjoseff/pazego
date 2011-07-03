@@ -1,0 +1,6 @@
+<%= form_tag current_user.memberships.
+                          build(:group_id => @group.id),
+                          :remote => true do %>
+  <div><%= hidden_field_tag :group_id %></div>
+  <div class="actions"><%= submit_tag "Join" %></div>
+<% end %>

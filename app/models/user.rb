@@ -11,7 +11,11 @@
 #
 
 class User < ActiveRecord::Base
-  has_many :things
+  has_many :things, :dependent => :destroy
+  has_many :memberships, :dependent => :destroy
+  has_many :groups, :through => :memberships
+  has_many :groups_as_owner, :class_name => "Group"
+  
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation
   
@@ -38,10 +42,24 @@ class User < ActiveRecord::Base
     (user && user.salt == cookie_salt) ? user : nil
   end
   
+ 
   def has_password?(submitted_password)
     #compare encrypted_password with the encrypted version of
     #submitted_password
     encrypted_password == encrypt(submitted_password)
+  end
+  
+  def member?(group)
+    Membership.where( :group_id => group.id, :user_id => self.user.id)
+  end
+  
+  def join!(group)
+    memberships.create!(:group_id => group.id)
+  end
+
+  def leave!(group)
+    membership = Membership.where( :group_id => group.id)
+    destroy(membership.id)
   end
   
   private

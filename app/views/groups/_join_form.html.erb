@@ -1,0 +1,7 @@
+  <div id="join-form">
+    <% if @group.members.include?(current_user) %>
+      <%= render :partial => 'leave' %>
+    <% else %>
+      <%= render :partial =>  'join' %>
+    <% end %>
+  </div>
